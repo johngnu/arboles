@@ -94,12 +94,13 @@ public class ArbolP {
     }
 
     // aqui me falta a que metodo va este code
-    {
+    public void de(NodoP s) {
         Cola niv = new Cola();
         Cola desc = new Cola();
         niv.adicionar(getRaiz());
-        while (!niv.esvacio()) {
-            while (!niv.esvacio()) {
+        int may = 0;
+        while (!niv.esvacio()) { // paso de un nivel a otro
+            while (!niv.esvacio()) {  // procesa un nivel
                 NodoP r = niv.eliminar();
 
                 System.out.println("(" + r.getNom() + " " + r.getCon() + " " + r.getExt() + ")");
@@ -116,4 +117,29 @@ public class ArbolP {
         }
     }
 
+    public int mayor(NodoP s) {
+        Cola niv = new Cola();
+        Cola desc = new Cola();
+        niv.adicionar(getRaiz());
+        int may = 0;
+        while (!niv.esvacio()) { // paso de un nivel a otro
+            while (!niv.esvacio()) {  // procesa un nivel
+                NodoP r = niv.eliminar();
+
+                if (r.getExt() > may) {
+                    may = r.getExt();
+                }
+
+                if (r.getIzq() != null) {
+                    desc.adicionar(r.getIzq());
+                }
+                if (r.getDer() != null) {
+                    desc.adicionar(r.getDer());
+                }
+
+            }
+            niv.vaciar(desc);
+        }
+        return may;
+    }
 }
