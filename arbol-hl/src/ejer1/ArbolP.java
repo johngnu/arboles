@@ -20,46 +20,35 @@ public class ArbolP {
 
     //algoritmos iterativos, recorridos en amplitud
     public void crear() {
-        Scanner edy = new Scanner(System.in);
         Cola niv = new Cola();
         Cola desc = new Cola();
         setRaiz(new NodoP());
-
-        System.out.print("Ingrese Nombre: ");
-        getRaiz().setNom(edy.next());
-        System.out.print("Ingrese Con: ");
-        getRaiz().setCon(edy.next());
-        System.out.print("Ingrese Con: ");
-        getRaiz().setExt(edy.nextInt());
-
+        getRaiz().setNom(Leer.dato());//nombre
+        getRaiz().setCon(Leer.dato());
+        getRaiz().setExt(Leer.datoInt());
         niv.adicionar(getRaiz());
-        while (!niv.esvacio()) {//paso de nivel
-
+        while (!niv.esvacio()) {
             while (!niv.esvacio()) {
                 NodoP r = niv.eliminar();
-                System.out.print(r.getNom() + "tendra izq? s/n:  ");
-                String resp = edy.next();
+                System.out.println(r.getNom() + "tenfra izq?:s/n");
+                String resp = Leer.dato();
                 if (resp.equals("s")) {
                     NodoP nue = new NodoP();
-                    System.out.print("Ingrese Nombre: ");
-                    getRaiz().setNom(edy.next());
-                    System.out.print("Ingrese Con: ");
-                    getRaiz().setCon(edy.next());
-                    System.out.print("Ingrese Con: ");
-                    getRaiz().setExt(edy.nextInt());
+                    nue.setNom(Leer.dato());
+                    nue.setCon(Leer.dato());
+                    nue.setExt(Leer.datoInt());
                     r.setIzq(nue);
                     desc.adicionar(r.getIzq());
+
                 }
-                System.out.print(r.getNom() + "tendra der? s/n:  ");
-                resp = edy.next();
+
+                System.out.println(r.getNom() + "tenfra der?:s/n");
+                resp = Leer.dato();
                 if (resp.equals("s")) {
                     NodoP nue = new NodoP();
-                    System.out.print("Ingrese Nombre: ");
-                    getRaiz().setNom(edy.next());
-                    System.out.print("Ingrese Con: ");
-                    getRaiz().setCon(edy.next());
-                    System.out.print("Ingrese Con: ");
-                    getRaiz().setExt(edy.nextInt());
+                    nue.setNom(Leer.dato());
+                    nue.setCon(Leer.dato());
+                    nue.setExt(Leer.datoInt());
                     r.setDer(nue);
                     desc.adicionar(r.getDer());
                 }
