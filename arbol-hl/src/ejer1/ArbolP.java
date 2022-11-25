@@ -94,7 +94,7 @@ public class ArbolP {
     }
 
     // aqui me falta a que metodo va este code
-    public void de(NodoP s) {
+    public void niveles(NodoP s) {
         Cola niv = new Cola();
         Cola desc = new Cola();
         niv.adicionar(getRaiz());
