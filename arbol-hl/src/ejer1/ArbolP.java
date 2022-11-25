@@ -30,7 +30,7 @@ public class ArbolP {
         while (!niv.esvacio()) {
             while (!niv.esvacio()) {
                 NodoP r = niv.eliminar();
-                System.out.println(r.getNom() + "tenfra izq?:s/n");
+                System.out.println(r.getNom() + "   tenfra izq? : s/n");
                 String resp = Leer.dato();
                 if (resp.equals("s")) {
                     NodoP nue = new NodoP();
@@ -42,7 +42,7 @@ public class ArbolP {
 
                 }
 
-                System.out.println(r.getNom() + "tenfra der?:s/n");
+                System.out.println(r.getNom() + "   tenfra der? : s/n");
                 resp = Leer.dato();
                 if (resp.equals("s")) {
                     NodoP nue = new NodoP();
