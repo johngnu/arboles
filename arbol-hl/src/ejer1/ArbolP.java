@@ -20,8 +20,8 @@ public class ArbolP {
 
     //algoritmos iterativos, recorridos en amplitud
     public void crear() {
-        Cola niv = new Cola();
-        Cola desc = new Cola();
+        CSimple niv = new CSimple();
+        CSimple desc = new CSimple();
         setRaiz(new NodoP());
         getRaiz().setNom(Leer.dato());//nombre
         getRaiz().setCon(Leer.dato());
@@ -59,8 +59,8 @@ public class ArbolP {
     }
 
     public void niveles() {
-        Cola niv = new Cola();
-        Cola desc = new Cola();
+        CSimple niv = new CSimple();
+        CSimple desc = new CSimple();
         niv.adicionar(getRaiz());
         int c = 0;
         while (!niv.esvacio()) {//paso de nivel

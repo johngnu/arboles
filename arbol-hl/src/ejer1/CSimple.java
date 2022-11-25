@@ -40,7 +40,7 @@ public class CSimple {
         return elem;
     }
 
-    void vaciar(Cola x) {
+    void vaciar(CSimple x) {
         while (!x.esvacio()) {
             adicionar(x.eliminar());
         }
